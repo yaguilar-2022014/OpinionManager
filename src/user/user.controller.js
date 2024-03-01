@@ -52,21 +52,24 @@ export const update = async(req, res)=>{
 
         if(data.newPassword && !await checkPassword(data.password, user.password))return res.status(401).send({message: 'Incorrect password'})
         if(data.password && data.newPassword){
+            data.password = await encrypt(data.newPassword)
             let updatePassword = await User.findOneAndUpdate(
                 {_id: id},
-                data.password = await encrypt(data.newPassword),
+                data,
                 {new: true}
                 )
+                console.log(data.password)
                 return res.send({message: updatePassword})
+        }else{
+            let updatedUser = await User.findOneAndUpdate(
+                {_id: id},
+                data,
+                {new: true}
+            )
+            if (!updatedUser) return res.status(401).send({ message: 'User not found and not updated' })
+            return res.send({ message: 'Updated user', updatedUser})
         }
 
-        let updatedUser = await User.findOneAndUpdate(
-            {_id: id},
-            data,
-            {new: true}
-        )
-        if (!updatedUser) return res.status(401).send({ message: 'User not found and not updated' })
-        return res.send({ message: 'Updated user', updatedUser})
     } catch (err) {
         console.error(err)
         if(err.keyvalue.username) return res.status(400).send({message: `Username ${err.keyvalue.username} is already taken`})
