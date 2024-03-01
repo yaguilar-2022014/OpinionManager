@@ -23,3 +23,20 @@ export const comment = async(req, res)=>{
         return res.status(500).send({message: 'Error at comment publication'})
     }
 }
+
+export const update = async(req, res)=>{
+    try {
+        let {id} = req.params
+        let data = req.body
+        let updatedComment = await Comment.findOneAndUpdate(
+            {_id: id},
+            data,
+            {new: true}
+        ).populate('user',['username'])
+        if(!updatedComment)return res.status(404).send({message: 'Publication or user not found, not updated'})
+        return res.send({message: 'Comment uodated successfuly !!', updatedComment})
+    } catch (err) {
+        console.error(err)
+        return res.status(500).send({message: 'Error at updating comment'})
+    }
+}
