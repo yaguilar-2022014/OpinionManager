@@ -1,0 +1,154 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "OpinionManager",
+    "dateExported": "2024-03-01T18:08:56.154Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "d008241d-cdb3-4bfe-a09d-7457925abc40",
+            "name": "User",
+            "containerId": "",
+            "created": "2024-03-01T00:54:29.099Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "409f841c-5f77-4151-b70e-a93db5473069",
+            "name": "Publication",
+            "containerId": "",
+            "created": "2024-03-01T00:54:47.781Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "6e48074f-4a7a-4a0d-adf7-99a5f58e2245",
+            "colId": "ce4988dd-bf73-4a0e-bf1a-c124ed7b5ad9",
+            "containerId": "d008241d-cdb3-4bfe-a09d-7457925abc40",
+            "name": "test",
+            "url": "user/test",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-01T00:55:05.781Z",
+            "modified": "2024-03-01T00:56:08.743Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "82e58ec7-4763-4021-8b64-e93091140376",
+            "colId": "ce4988dd-bf73-4a0e-bf1a-c124ed7b5ad9",
+            "containerId": "d008241d-cdb3-4bfe-a09d-7457925abc40",
+            "name": "Register",
+            "url": "user/register",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-01T08:11:20.423Z",
+            "modified": "2024-03-01T17:57:39.034Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Yerick"
+                    },
+                    {
+                        "name": "surname",
+                        "value": "Aguilar"
+                    },
+                    {
+                        "name": "username",
+                        "value": "IceKry"
+                    },
+                    {
+                        "name": "email",
+                        "value": "yerick@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "64f77361-d545-4565-9934-aeca35469a51",
+            "colId": "ce4988dd-bf73-4a0e-bf1a-c124ed7b5ad9",
+            "containerId": "d008241d-cdb3-4bfe-a09d-7457925abc40",
+            "name": "Login",
+            "url": "user/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-03-01T08:26:19.865Z",
+            "modified": "2024-03-01T08:28:10.663Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "IceKry"
+                    },
+                    {
+                        "name": "email",
+                        "value": "yerick@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "065ff830-7b45-4624-aeda-739d4641e7a8",
+            "colId": "ce4988dd-bf73-4a0e-bf1a-c124ed7b5ad9",
+            "containerId": "d008241d-cdb3-4bfe-a09d-7457925abc40",
+            "name": "Update",
+            "url": "user/update/65e217132bc7421f36ae046a",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-03-01T08:58:09.389Z",
+            "modified": "2024-03-01T18:08:21.172Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUyMTcxMzJiYzc0MjFmMzZhZTA0NmEiLCJ1c2VybmFtZSI6IkljZUtyeSIsImVtYWlsIjoieWVyaWNrQGdtYWlsLmNvbSIsImlhdCI6MTcwOTMxNTg3NCwiZXhwIjoxNzA5MzI2Njc0fQ.7tu__yzvnUQMA6LKVxAqd94L4yzeT0h6VqJXmSRGoVs"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "password",
+                        "value": "abcdefg",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "newPassword",
+                        "value": "12345678",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "name",
+                        "value": "Yerick"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "localhost:2880/"
+        }
+    }
+}
